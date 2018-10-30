@@ -1,0 +1,56 @@
+<!-- Component: 	CmpAlert -->
+<!-- Created by: 	OpFocus(Veena Sundara-Heragu) on 10/30/2019 -->
+<!-- Description: 	Component to show an alert. Can optionally include buttons -->
+<aura:component >
+    <aura:attribute name="name" type="String" access="public" />
+    <aura:attribute name="title" type="String" access="public" default="Error"/>
+    <aura:attribute name="message" type="String" access="public" description="message displayed below title above buttons"/>
+    <aura:attribute name="additionalTitle" type="String" access="public" description="second line of title"/>
+    <aura:attribute name="theme" type="String" access="public" default="error" description="success,warning,error,info"/>
+    <aura:attribute name="lstButtonLabels" type="String[]" access="public" description="list of labels for buttons"/>
+
+    <!-- use this from parent component -->
+    <aura:method name="displayAlert" action="{!c.displayAlert}">
+        <aura:attribute name="name" type="String" />
+        <aura:attribute name="theme" type="String" description="success,warning,error,info"/>
+        <aura:attribute name="title" type="String"  />
+        <aura:attribute name="additionalTitle" type="String" description="second line of title"/>
+        <aura:attribute name="message" type="String" description="message displayed below title above buttons"/>
+        <aura:attribute name="lstButtonLabels" type="String[]" description="list of labels for buttons"/>
+    </aura:method>
+
+    <aura:method name="close" action="{!c.close}"/>
+
+    <!-- events -->
+    <aura:handler event="c:EvtAppShowAlert" action="{!c.showAlert}"/> <!-- use this from non parent component -->
+    <aura:registerEvent name="EvtCmpAlertClosed" type="c:EvtCmpAlertClosed"/>
+
+
+    <div  aura:id="mainDiv" role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id"
+          aria-describedby="prompt-message-wrapper"
+          class="slds-modal slds-modalprompt">
+        <div class="slds-modal__container">
+            <div class="{!'slds-modal__header slds-theme_' + v.theme + ' slds-theme_alert-texture'}">
+                <lightning:buttonIcon iconName="utility:close" alternativeText="Close" variant="bare-inverse"
+                                      onclick="{!c.close}" class="slds-modal__close" size="large"/>
+                <h2 class="slds-text-heading--medium" id="prompt-heading-id">{!v.title}</h2>
+                <aura:if isTrue="{!v.additionalTitle}">
+                    <p><aura:unescapedHtml value="{!v.additionalTitle}"/></p>
+                </aura:if>
+            </div>
+            <aura:if isTrue="{!v.message}">
+                <div class="slds-modal__content slds-p-around--medium">
+                        <aura:unescapedHTML value="{!v.message}" />
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.lstButtonLabels &amp;&amp; v.lstButtonLabels.length > 0}">
+                <div class="slds-modal__footer slds-theme_default">
+                    <aura:iteration var="btn" items="{!v.lstButtonLabels}" >
+                        <lightning:button name="{!btn}" label="{!btn}" onclick="{!c.handleClick }" />
+                    </aura:iteration>
+                </div>
+            </aura:if>
+        </div>
+    </div>
+    <div aura:id="backdrop" class="slds-backdrop"></div>
+</aura:component>

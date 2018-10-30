@@ -1,0 +1,7 @@
+<!-- Component: 	EvtCmpAlertClosed -->
+<!-- Created by: 	OpFocus(Veena Sundara-Heragu) on 10/30/2018 -->
+<!-- Description: 	alert has been closed -->
+<aura:event type="COMPONENT" description="EvtCmpAlertClosed">
+    <aura:attribute name="name" type="String" description="name of the alert that was closed"/>
+    <aura:attribute name="btnClicked" type="String" description="label of the button clicked, empty if it is the X in the header"/>
+</aura:event>

@@ -1,0 +1,11 @@
+<!-- Component: 	EvtAppDisplayAlert -->
+<!-- Created by: 	OpFocus(Veena Sundara-Heragu) on 10/29/2018 -->
+<!-- Description: 	display alert modal -->
+<aura:event type="APPLICATION" description="EvtAppDisplayAlert">
+    <aura:attribute name="name" type="String" />
+    <aura:attribute name="theme" type="String" description="success,warning,error,info"/>
+    <aura:attribute name="title" type="String"  />
+    <aura:attribute name="additionalTitle" type="String" description="second line of title"/>
+    <aura:attribute name="message" type="String" description="message displayed below title above buttons"/>
+    <aura:attribute name="lstButtonLabels" type="String[]" description="list of labels for buttons"/>
+</aura:event>
