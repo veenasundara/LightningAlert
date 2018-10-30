@@ -21,7 +21,7 @@ component.find("alert").displayAlert('CompleteAlert', // name
                                      ['Yes', 'No'] ); // list of labels for buttons to be displayed
 ```
 
-..._The theme controls the color of the alert header._..
+  * _The theme controls the color of the alert header._..
 
 ..._To just display a success or error alert, do not pass any values for the last 2 parameters (message and list of button labels)._ 
 
