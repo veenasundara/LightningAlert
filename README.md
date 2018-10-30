@@ -5,11 +5,13 @@ Component to display alert popup
 ## Usage
 
 1. add the following code to your lightning component:
-&lt;!-- add the component to your component body --&gt;
+
+* &lt;!-- add the component to your component body --&gt;
 ```
 <c:CmpAlert aura:id="alert" />
 ```
-&lt;!-- handle the close event of the alert --&gt;
+
+* &lt;!-- handle the close event of the alert --&gt;
 ```
 <aura:handler name="EvtCmpAlertClosed" event="c:EvtCmpAlertClosed" action="{!c.alertClosed}"/>
 ```
