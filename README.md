@@ -22,7 +22,6 @@ component.find("alert").displayAlert('CompleteAlert', // name
 
    // The theme controls the color of the alert header.
 
-   // To just display a success or error alert, do not pass any values for the last 2 parameters (message and list of button labels).
 ```
 
 
