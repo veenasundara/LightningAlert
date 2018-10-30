@@ -23,7 +23,7 @@ component.find("alert").displayAlert('CompleteAlert', // name
 
   * _The theme controls the color of the alert header._..
 
-..._To just display a success or error alert, do not pass any values for the last 2 parameters (message and list of button labels)._ 
+  * _To just display a success or error alert, do not pass any values for the last 2 parameters (message and list of button labels)._ 
 
 * to close the alert from the parent component, do this:
 
