@@ -4,20 +4,25 @@ Component to display alert popup
 
 ## Usage
 
-<!-- add the component to your component body -->
+&lt;!-- add the component to your component body --&gt;
 <c:CmpAlert aura:id="alert" />
 
 * to display an alert, do this: 
+
+```javascript
 component.find("alert").displayAlert('CompleteAlert', 
                                      'warning', 
                                       'Alert', 
                                      '', 
                                      'Are you sure you would like to delete ?', 
                                      ['Yes', 'No'] ); 
+```
 
 * to close the alert from the parent component, do this:
-component.find("alert").close();
 
+```javascript
+component.find("alert").close();
+```
 
 ## Install using the button below:
 
