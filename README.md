@@ -13,13 +13,17 @@ Component to display alert popup
 * to display an alert, do this: 
 
 ```javascript
-component.find("alert").displayAlert('CompleteAlert', _// name_
-                                     'warning', _// values: success,error,warning,info_
-                                      'Alert', _// title_
-                                     '', _// additional title line_
-                                     'Are you sure you would like to delete ?', _// message in alert box_
-                                     ['Yes', 'No'] ); _// list of labels for buttons to display_
+component.find("alert").displayAlert('CompleteAlert', // name
+                                     'warning', // theme: success,error,warning,info
+                                      'Alert', // title
+                                     '', // additional title line
+                                     'Are you sure you would like to delete ?', // message in alert box
+                                     ['Yes', 'No'] ); // list of labels for buttons to be displayed
 ```
+
+The theme controls the color of the alert header.
+
+To just display a success or error alert, do not pass any values for the last 2 parameters (message and list of button labels). 
 
 * to close the alert from the parent component, do this:
 
