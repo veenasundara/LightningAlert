@@ -4,11 +4,17 @@ Component to display alert popup
 
 ## Usage
 
+1. add the following code to your lightning component:
 &lt;!-- add the component to your component body --&gt;
-
 ```
 <c:CmpAlert aura:id="alert" />
 ```
+&lt;!-- handle the close event of the alert --&gt;
+```
+<aura:handler name="EvtCmpAlertClosed" event="c:EvtCmpAlertClosed" action="{!c.alertClosed}"/>
+```
+
+2. add the following code to your lightning javascript:
 
 * to display an alert, do this: 
 
@@ -24,12 +30,25 @@ component.find("alert").displayAlert('CompleteAlert', // name
 
 ```
 
-
-
 * to close the alert from the parent component, do this:
 
 ```javascript
 component.find("alert").close();
+```
+
+* to handle the close event of the alert and decide the next action
+```javascript
+
+   alertClosed : function(component, event, helper) {
+
+        var eventParams = event.getParams();
+
+        if(eventParams.btnClicked == 'Yes')
+        {
+            helper.hlpDoSomething(component);
+        }
+    },
+
 ```
 
 ## Install using the button below:
