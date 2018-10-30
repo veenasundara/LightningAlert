@@ -5,6 +5,7 @@ Component to display alert popup
 ## Usage
 
 &lt;!-- add the component to your component body --&gt;
+
 <c:CmpAlert aura:id="alert" />
 
 * to display an alert, do this: 
