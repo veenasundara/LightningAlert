@@ -22,7 +22,7 @@
     <aura:method name="close" action="{!c.close}"/>
 
     <!-- events -->
-    <aura:handler event="c:EvtAppShowAlert" action="{!c.showAlert}"/> <!-- use this from non parent component -->
+    <aura:handler event="c:EvtAppDisplayAlert" action="{!c.showAlert}"/> <!-- use this from non parent component -->
     <aura:registerEvent name="EvtCmpAlertClosed" type="c:EvtCmpAlertClosed"/>
 
 
