@@ -13,7 +13,7 @@
         //console.log('hlpClose, btnClicked = ' + btnClicked);
         var evt = component.getEvent("EvtCmpAlertClosed");
         evt.setParams({"name": component.get("v.name"),
-                      "btnClicked": btnClicked });
+                          "btnClicked": btnClicked });
         evt.fire();
 
         var mainDiv = component.find("mainDiv");
